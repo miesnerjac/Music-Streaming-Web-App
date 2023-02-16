@@ -1,0 +1,16 @@
+﻿@page
+@model Music_Streaming_database.Pages.Login.enterLoginModel
+@{
+}
+
+<div class="text-center container">
+    <h1> Please login </h1>
+    <form method="post">
+        <input type="text" asp-for="Username" placeholder="Username"/>
+        <input type="password" asp-for="Password" placeholder="Password" />
+
+        <button class="btn btn-primary mt-1" type="submit">Login</button>
+    </form>
+
+    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Back</a>
+</div>

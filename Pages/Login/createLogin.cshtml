@@ -1,0 +1,16 @@
+﻿@page
+@model Music_Streaming_database.Pages.Login.createLoginModel
+@{
+}
+
+<div class="text-center container">
+    <h1> Enter your username and password for your new account </h1>
+    <form method="post">
+        <input type="text" asp-for="Username" placeholder="Username" />
+        <input type="text" asp-for="Password" placeholder="Password" />
+
+        <button class="btn btn-primary mt-1" type="submit">Create</button>
+    </form>
+
+    <a class="nav-link text-dark" asp-area="" asp-page="/Login/enterLogin">Back</a>
+</div>
