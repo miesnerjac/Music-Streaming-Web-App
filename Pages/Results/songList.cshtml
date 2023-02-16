@@ -1,0 +1,70 @@
+﻿@page
+@model Music_Streaming_database.Pages.Results.songListModel
+@{
+}
+<div>
+    <h3>List of songs:</h3>
+        <table class="table"> 
+            <thead> 
+                <tr> 
+                    <th>    
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Release Year
+                    </th>
+                    <th>
+                        Length
+                    </th>
+                    <th>
+                        Genre
+                    </th>
+                    <th>
+                        artist Name
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var i in Model.songs)
+                {
+                    <tr>
+                        <td>
+                            @i.ID
+                        </td>
+                        
+                        <td>
+                            @i.name
+                        </td>
+
+                        <td>
+                            @i.relDate
+                        </td>
+
+                        <td>
+                            @i.length
+                        </td>
+
+                        <td>
+                            @i.genre
+                        </td>
+
+                        <td>
+                            @i.artName
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>
+
+<div class="text-center">
+    <h5>To add this song to a playlist, enter the song ID</h5>
+    <form method="post">
+        <input type="text" asp-for="songID" placeholder="Enter ID"/>
+        <button class="btn btn-primary mt-1" type="submit">Next</button>
+    </form>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>

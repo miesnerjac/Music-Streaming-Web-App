@@ -1,0 +1,51 @@
+﻿@page
+@model Music_Streaming_database.Pages.Results.addSongModel
+@{
+}
+
+<div>
+    <div>
+        <h3>User's Playlists:</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        User ID
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.playlists)
+                {
+                    <tr>
+                        <td>
+                            @i.Id
+                        </td>
+
+                        <td>
+                            @i.Name
+                        </td>
+
+                        <td>
+                            @i.userID
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <h3> Enter the ID of the playlist you want to add the song to</h3>
+    <form method="post">
+        <input type="text" asp-for="playlistID" placeholder="Enter Name" />
+        <button class="btn btn-primary mt-1" type="submit">Enter</button>
+    </form>
+
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>

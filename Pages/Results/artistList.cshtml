@@ -1,0 +1,92 @@
+﻿@page
+@model Music_Streaming_database.Pages.Results.artistListModel
+@{
+}
+<div>
+    <h3>List of artists:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    artist Name
+                </th>
+                <th>
+                    Number of listeners
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.artists)
+            {
+                <tr>
+                    <td>
+                        @i.Name
+                    </td>
+                    <td>
+                        @i.Listeners
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if(Model.artistName != "All" && Model.artistName != "all")
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Release Year
+                    </th>
+                    <th>
+                        Length
+                    </th>
+                    <th>
+                        Genre
+                    </th>
+                    <th>
+                        artist Name
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.songs)
+                {
+                    <tr>
+                        <td>
+                            @i.ID
+                        </td>
+
+                        <td>
+                            @i.name
+                        </td>
+
+                        <td>
+                            @i.relDate
+                        </td>
+
+                        <td>
+                            @i.length
+                        </td>
+
+                        <td>
+                            @i.genre
+                        </td>
+
+                        <td>
+                            @i.artName
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>

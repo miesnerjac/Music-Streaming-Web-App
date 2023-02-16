@@ -1,0 +1,63 @@
+﻿@page
+@model Music_Streaming_database.Pages.Results.playingPlaylistModel
+@{
+}
+<div>
+    <h1> You are now listening to @Model.playlistName</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Release Year
+                </th>
+                <th>
+                    Length
+                </th>
+                <th>
+                    Genre
+                </th>
+                <th>
+                    artist Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.songs)
+            {
+                <tr>
+                    <td>
+                        @i.ID
+                    </td>
+
+                    <td>
+                        @i.name
+                    </td>
+
+                    <td>
+                        @i.relDate
+                    </td>
+
+                    <td>
+                        @i.length
+                    </td>
+
+                    <td>
+                        @i.genre
+                    </td>
+
+                    <td>
+                        @i.artName
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>
