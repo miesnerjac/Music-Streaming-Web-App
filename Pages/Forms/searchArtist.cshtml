@@ -1,0 +1,14 @@
+﻿@page
+@model Music_Streaming_database.Pages.Forms.searchArtistModel
+@{
+}
+
+<div class="text-center container">
+    <h1> Search for an Artist </h1>
+    <h6> Enter 'all' to see all artists</h6>
+    <form method="post">
+        <input type="text" asp-for="artistName" placeholder="Name" />
+        <button class="btn btn-primary mt-1" type="submit">Search</button>
+    </form>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>

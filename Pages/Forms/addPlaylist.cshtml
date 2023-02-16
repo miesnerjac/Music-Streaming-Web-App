@@ -1,0 +1,12 @@
+﻿@page
+@model Music_Streaming_database.Pages.Forms.playlistModel
+@{
+}
+<div>
+    <h3> Enter the name for your new playlist</h3>
+    <form method="post">
+        <input type="text" asp-for="playlistName" placeholder="Name" />
+        <button class="btn btn-primary mt-1" type="submit">Enter</button>
+    </form>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Forms/actionList">Back</a>
+</div>
